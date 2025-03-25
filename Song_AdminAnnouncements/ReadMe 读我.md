@@ -71,4 +71,3 @@ RegisterCommand('gonggao', function(source, args, rawCommand)
         TriggerClientEvent('esx:showNotification', source, 'You do not have permission to use this command')
     end
 end, false)
-
