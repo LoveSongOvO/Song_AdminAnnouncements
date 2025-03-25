@@ -60,3 +60,15 @@ local input = lib.inputDialog('Publish Announcement', {
         TriggerServerEvent('Song_AdminGongGao:SendAnnouncement', message, duration)
     end
 end)
+
+Song_AdminGongGao/server/sv_main.lua
+
+RegisterCommand('gonggao', function(source, args, rawCommand)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    if xPlayer.getGroup() == 'admin' then
+        TriggerClientEvent('Song_AdminGongGao:OpenInputMenu', source)
+    else
+        TriggerClientEvent('esx:showNotification', source, 'You do not have permission to use this command')
+    end
+end, false)
+
